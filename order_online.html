@@ -1,0 +1,354 @@
+<!-- Mohanty, Ankit Goutam
+     Username #jadrn023
+     Project #2
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ankit's Deluxe Chocolates</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="shopping.js"></script>
+   <script type="text/javascript" src="product_list.js"></script>
+   
+   
+    <script type="text/javascript" src="proj4_example.js"></script>  
+    <script type="text/javascript" src="demo.js"></script>  
+    <script type="text/javascript" src="jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>    
+   <link rel="stylesheet" href="mycss.css">
+       <script src="/jquery/jquery.js"></script>
+    <script src="ui/jquery-ui.min.js"></script>
+
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+   
+      <link rel="stylesheet" href="ui/jquery-ui.min.css">
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body id = "bodyorder">
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Ankit's Deluxe Chocolates</h1>      
+    <p>More Pleasure, Less Guilt.</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="proj2.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li class="active"><a href="order_online.html">Order Online</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       
+        <li><a href="order_online.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+    <div class="ui-widget">
+    <div class="ui-widget-header">
+    <div id="counter"><h2>Your Cart </h2><span id="count">0</span></div>
+    </div>  
+    
+    <div id="main" class="ui-widget-content">    
+      
+        <br /><br />
+        <input type="button" id= "open" value="Order Now" />                                                                 
+      </p>        
+        <div id="cart"></div>
+    </div>  
+<!-- The order form is not visible until the Order Now button is clicked -->
+ <div class="ui-widget">
+  
+        <div id="ui-dialog" title="Order Summary">
+            <div class="ui-dialog-content">
+<script>
+
+ 
+function FillBilling(f) {
+
+        if(f.billingtoo.checked == true) {
+
+            f.b_fname.value = f.fname.value;
+
+            f.b_lname.value = f.lname.value;
+
+            f.b_phonenum.value = f.phonenum.value;
+
+            f.b_address1.value = f.address1.value;
+
+            f.b_address2.value = f.address2.value;
+
+            f.b_city.value = f.city.value;
+
+            f.b_state.value = f.state.value;
+
+f.b_zip.value = f.zip.value;
+
+
+        }
+
+        if(f.billingtoo.checked == false) {
+
+            f.b_fname.value = '';
+
+            f.b_lname.value = '';
+
+            f.b_phonenum.value = '';
+
+            f.b_address1.value = '';
+
+            f.b_address2.value = '';
+
+            f.b_city.value = '';
+
+            f.b_state.value = '';
+
+f.b_zip.value = '';
+
+        }
+
+    }
+</script>
+
+   <form name="myform" id="myform" action = "http://jadran.sdsu.edu/jadrn023/jsp/submit.jsp">
+        
+ 
+        <fieldset>
+
+         <h4>Billing Address</h4> 
+         <input type="hidden" id="hidden" name="hidden">
+          <label for="fname">First Name*</label>
+          <input type="text" id="fname" name="fname" required>
+          <br>
+         
+          <label for="lname">Last Name*</label>
+          <input type="text" id="lname" name="lname" required>
+          <br>
+          <label for="phonenum">Phone Number* (format: xxx-xxx-xxxx):</label>
+          <input id="phonenum" type="tel" pattern="^\d{3}-\d{3}-\d{4}$"  name = "phonenum" required>
+          <br>
+          <label for="address1">Address Line 1*:</label>
+          <input type="text" id="address1" name = "address1" required>
+          <br>
+          <label for ="address2">Address Line 2(optional)</label>
+          <input type="text" id="address2" name="address2">
+          <br>
+          <label for ="city">City*:</label>
+          <input type="text" id="city" name="city" required>
+          <br><br>
+          <label for="state">State*:</label>
+          <label>
+          <select name="state" id="state" required>
+                  <option value="">Please Select</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                                         
+          </select>   
+        </label>
+          <br><br>
+          <label for="zip">Zipcode* (format:xxxxx)</label>
+          <input type="tel" id="zip" size="8" pattern="^\d{5}$" required name="zip" />
+          <br>
+
+<input type="checkbox" onclick="FillBilling(this.form)" name="billingtoo">
+
+<em>Check this box if Billing Address and Shipping Address are the same.</em>
+
+         <h4>Shipping Address</h4> 
+         <label for="fname">First Name*</label>
+          <input type="text" id="b_fname" name="b_fname" required>
+          <br>
+         
+          <label for="lname">Last Name*</label>
+          <input type="text" id="b_lname" name="b_lname" required>
+          <br>
+          <label for="phonenum">Phone Number* (format: xxx-xxx-xxxx):</label>
+          <input id="b_phonenum" type="tel" pattern="^\d{3}-\d{3}-\d{4}$"  name = "b_phonenum" required>
+          <br>
+          <label for="address1">Address Line 1*:</label>
+          <input type="text" id="b_address1" name = "b_address1" required>
+          <br>
+          <label for ="address2">Address Line 2(optional)</label>
+          <input type="text" id="b_address2" name="b_address2">
+          <br>
+          <label for ="city">City*:</label>
+          <input type="text" id="b_city" name="b_city" required>
+          <br><br>
+          <label for="state">State*:</label>
+          <label>
+          <select name="b_state" id="b_state" required>
+                  <option value="">Please Select</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                                         
+          </select>   
+        </label>
+          <br>
+          <label for="zip">Zipcode* (format:xxxxx)</label>
+          
+          <input type="tel" id="b_zip" size="8" pattern="^\d{5}$" required name="b_zip" />
+          <br>
+<h4>Payment Details</h4>
+         <label for="payment type">Payment Type*:</label>
+          <label>
+          <select name="payment" id="payment" required>
+                  <option value="">Please Select</option>
+                  <option value="AL">Visa</option>
+                  <option value="AL">Mastercard</option>
+                  <option value="AL">Discover</option>
+                  <option value="AL">American Express</option>
+                                         
+          </select>   
+        </label>
+          <br>
+          <label for="cardno">Card no.*</label>
+          <input type="tel" name="cardno" id="card" size="16" pattern="^\d{16}$" required  placeholder="16 digits only"/></td>
+          <br><label class="expiry" for="expiry">Expiry: *</label>
+        
+          <select id = "selectElementId" required></select> <select id = "monthId" required></select> 
+          <br>
+          <br>
+        <button id= "yoyo" type="submit">Order Now</button>
+       
+      </form>  
+            </div> <!-- end ui-dialog-content -->
+        </div> <!-- end ui-dialog -->     
+    </div>  <!-- end ui-widget -->
+
+</body>
+</html>

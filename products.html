@@ -1,0 +1,163 @@
+<!-- Mohanty, Ankit Goutam
+     Username #jadrn023
+     Project #2
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ankit's Deluxe Chocolates</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="shopping.js"></script>
+   <script type="text/javascript" src="product_list.js"></script>
+   
+   <link rel="stylesheet" href="mycss.css">
+
+</head>
+<body>
+
+
+
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Ankit's Deluxe Chocolates</h1>      
+    <p>More Pleasure, Less Guilt.</p>
+  </div>
+</div>
+
+
+
+
+
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="proj2.html">Home</a></li>
+        <li class="active"><a href="products.html">Products</a></li>
+        <li><a href="order_online.html">Order Online</a></li>
+        <li ><a href="about_us.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li><a href="order_online.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-main">
+    <div id="overlay">
+        <div class="loader"></div>
+    </div>
+    <div id="snackbar"><div id="snackText"></div></div>
+    <div class="col-filter">
+
+        <div class="card">
+
+            <div class="container" id="filterCheckBox">
+
+                <p><b>Filters<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://jadran.sdsu.edu/jadrn023/products.html" style="color:blue;">Show all</a> </p>
+                <button class="filter">BRAND </button>
+                <div class="filter-panel">
+                    <div id="brandCheckBox">
+                         <p> <button class="link" id="hello1" value="Amul"/> <span>Amul</span></p>
+                    <p><button class="link" id="hello2" value="Lindt"/> <span>Lindt</span></p>
+                    <p><button class="link" id="hello3" value="Bounty"/> <span>Bounty</span></p>
+                    <p><button class="link" id="hello4" value="Parle"/> <span>Parle</span></p>
+                    <p><button class="link" id="hello5" value="Cadbury"/> <span>Cadbury</span></p>
+                    <p><button class="link" id="hello6" value="Bournville"/> <span>Bournville</span></p>
+                    <p><button class="link" id="hello7" value="Hersheys"/> <span>Hersheys</span></p>
+                    <p><button class="link" id="hello8" value="Mars"/> <span>Mars</span></p>
+
+                    </div>
+
+                </div>
+                <button class="filter">CATEGORY </button>
+                <div class="filter-panel">
+                    <div id ="categoryCheckBox">
+                         <p> <button class="link" id="chk1" value="Milk Chocolate"/> <span>Milk Chocolate</span></p>
+                    <p><button class="link" id="chk2" value="Dark Chocolate"/> <span>Dark Chocolate</span></p>
+                    <p><button class="link" id="chk3" value="Chocolate Truffles"/> <span>Chocolate Truffles</span></p>
+                     <p><button class="link" id="chk4" value="Truffles"/> <span>Truffles</span></p>
+                      <p><button class="link" id="chk5" value="Nuts and Chews"/> <span>Nuts and Chews</span></p>
+                    </div>
+
+                </div>
+               
+
+            </div>
+        </div>
+      </div>
+
+    <div id ="content"> 
+
+    </div>
+
+
+
+  <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div  class="modal-header">
+          <span class="close">&times;</span>
+          <h2 id="modal-header-text">Modal Header</h2>
+        </div>
+        <div id="modal-body" class="modal-body">
+          <p>Some text in the Modal Body</p>
+          <p>Some other text...</p>
+        </div>
+        <div  class="modal-footer">
+          <h3 id="modal-footer-text">Modal Footer</h3>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+<script type="text/javascript" src ="accordion.js"> 
+</script>
+
+
+</body>
+</html>
